@@ -4,11 +4,17 @@ const userRoute=require('./src/routes/route')
 const cors = require('cors');
 const app=express();
 
+const corsOptions = { 
+    origin: 'http://localhost:3000', 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    allowedHeaders: 'Content-Type, Authorization'
+};
 
+app.use(cors(corsOptions));
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 app.use('/auth',userRoute)
-app.use(cors());
 
 app.get('/',(req,res)=>{
     return res.send({message:"Hello world from homepage"})
