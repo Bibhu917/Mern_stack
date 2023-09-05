@@ -5,14 +5,14 @@ const cors = require('cors');
 const bookssRoute = require('./src/routes/bookroute');
 const app=express();
 
-const corsOptions = { 
-    origin: 'http://localhost:3000', 
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    allowedHeaders: 'Content-Type, Authorization'
-};
+// const corsOptions = { 
+//     origin: 'http://localhost:3000', 
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true,
+//     allowedHeaders: 'Content-Type, Authorization'
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 app.use('/auth',userRoute)
@@ -24,6 +24,5 @@ app.get('/',(req,res)=>{
 
 app.listen(8080,async()=>{
     await dbUrl;
-    console.log('Server is listening on port 8080');
-    console.log("Hello From server")
+    console.log('listening on port 8080')
 })
