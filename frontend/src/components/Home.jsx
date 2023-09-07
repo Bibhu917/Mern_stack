@@ -15,15 +15,14 @@ export const Home = () => {
   const [books, setBooks] = useState([]);
   const [clickedIcons, setClickedIcons] = useState([]);
   const [wishlist, setWishlist] = useState([]);
-console.log(wishlist)
 
 const fetchBooks = async () => {
   try {
     const bookList = await axios.get(
       "http://localhost:8080/books/booklist"
     );
-    const booksData = bookList.data.booklists;
-    setBooks(booksData);
+    const booksData = bookList.data.booklist;
+     setBooks(booksData);
   } catch (error) {
     console.error("Error fetching books:", error);
   }
@@ -46,6 +45,7 @@ const fetchBooks = async () => {
 
   const handleDelete= async(id) => {
     try {
+      console.log(id)
      const deletedata= await axios.delete(`http://localhost:8080/books/deletebook/${id}`)
      console.log(deletedata)
       fetchBooks();
@@ -58,6 +58,8 @@ const fetchBooks = async () => {
       <Header />
       <div className="card-container">
       {books !== undefined && books.map((book, i) => (
+        <>
+        {console.log(book)}
       <Card sx={{ maxWidth: 251 }}>
       <CardMedia
         sx={{ height: 250 }}
@@ -84,9 +86,10 @@ const fetchBooks = async () => {
       </CardActions>
       <CardActions className="last">
         <Button>Edit</Button>
-        <Button onClick={()=>handleDelete(book.id)}>Delete</Button>
+        <Button onClick={()=>handleDelete(book._id)}>Delete</Button>
       </CardActions>
     </Card>
+    </>
     ))}
     </div>
     </div>

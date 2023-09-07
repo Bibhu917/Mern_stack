@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {useNavigate } from 'react-router-dom'
+import '../App.css'
 import axios from 'axios'
 import { FaUser, FaEnvelope, FaLock, FaKey, FaPhone } from 'react-icons/fa'
 
