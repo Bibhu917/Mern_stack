@@ -12,6 +12,17 @@ bookssRoute.post('/addBook',async(req,res)=>{
     return res.status(200).send({message:"Book created successfully",bookdata})
 })
 
+bookssRoute.get('/booklist',async(req,res)=>{
+    try {
+        const booklist=await bookModel.find();
+        return res.send({message:"List of books are",booklist})
+    } catch (error) {
+        console.log(error);
+        return res.send({message:"Server Error"});
+    }
+
+})
+
 
 bookssRoute.get('/singleBook/:id',async(req,res)=>{
     try {
