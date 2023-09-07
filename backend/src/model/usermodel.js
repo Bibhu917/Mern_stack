@@ -4,7 +4,7 @@ const userSchmea=mongoose.Schema({
     email:String,
     password:String,
     repassword:String,
-    mobileNumber:Number
+    mobileNumber:Number,
 })
 const userModel=mongoose.model('user',userSchmea);
 module.exports=userModel;

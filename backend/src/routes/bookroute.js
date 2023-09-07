@@ -12,4 +12,9 @@ bookssRoute.post('/addBook',async(req,res)=>{
     return res.status(200).send({message:"Book created successfully",bookdata})
 })
 
+bookssRoute.get('/booklist',async(req,res)=>{
+    const booklists = await bookModel.find()
+    res.status(200).send({message:"list of books",booklists});
+})
+
 module.exports = bookssRoute

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
+import {useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { FaUser, FaEnvelope, FaLock, FaKey, FaPhone } from 'react-icons/fa'
 
 export const Signup = () => {
     const [userData,setUserData ] = useState({ username:"", email:"", password:"",repassword:"", mobileNumber:"" })
-
+    const nav= useNavigate()
     const handleChange = (e) => {
         setUserData({...userData,[e.target.name]: e.target.value,});
     }
@@ -19,8 +20,8 @@ export const Signup = () => {
           mobileNumber:userData.mobileNumber,
         }
         try {
-            const response = await axios.post("https://mern-stack-test.vercel.app/auth/register", data);
-            console.log("Response:", response.data); 
+            const response = await axios.post("http://localhost:8080/auth/register", data);
+            nav('/login')
           } catch (error) {
             console.error("Error:", error);
           }
