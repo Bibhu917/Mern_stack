@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "./Header";
-import { Footer } from "./Footer";
 import "../App.css";
 import {Button} from '@mui/material'
 import Card from '@mui/material/Card';

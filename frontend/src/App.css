@@ -1,31 +1,25 @@
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
-}
-.card-container>div{
-  margin-bottom: 10px;
-}
-.last{
-  display: flex;
-  justify-content: space-around;
-}
-.last.clicked {
-  background-color: red;
-}
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-.conteiner{
-  width: 50% !important;
-  margin: auto;
-  padding-top: 5%;
-}
-/* .bookform{
-padding: 5%;
-}
-form>div>div{
- width: 50ch ;
-} */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .card-container>div{
+    margin-bottom: 10px;
+  }
+  .last{
+    display: flex;
+    justify-content: space-around;
+  }
+  .last.clicked {
+    background-color: red;
+  }
+  .App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .conteiner{
+    width: 50% !important;
+    margin: auto;
+    padding-top: 5%;
+  }

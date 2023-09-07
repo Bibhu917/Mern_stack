@@ -1,6 +1,5 @@
 import React from "react";
 import { Header } from "./Header";
-import { Footer } from "./Footer";
 
 export const Wishlist = ({ wishlist  }) => {
   console.log(wishlist)
@@ -22,7 +21,6 @@ export const Wishlist = ({ wishlist  }) => {
           )}
         </ul>
       </div>
-      <Footer />
     </div>
   );
 };
